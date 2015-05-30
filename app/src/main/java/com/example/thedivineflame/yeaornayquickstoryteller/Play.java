@@ -34,8 +34,9 @@ public class Play extends Activity {
         currentChoice = "";
         choices = "";
         choiceOutput = "";
-        ArrayList<String> wholeStory = new ArrayList<String>();
+        wholeStory = new ArrayList<>();
         setupStory();
+        setStory();
         yay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -46,6 +47,12 @@ public class Play extends Activity {
             @Override
             public void onClick(View v) {
                 decision(false);
+            }
+        });
+        quit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                output.setText(choices);
             }
         });
     }
@@ -72,128 +79,118 @@ public class Play extends Activity {
         return super.onOptionsItemSelected(item);
     }
     public void decision(boolean response) {
-        if (choiceOutput.contains("!!!END!!!")) {
+       // if (choiceOutput.contains("!!!END!!!")) {
 
-        }
-        else if (response == true) {
+        //}
+         if (response) {
             choices = choices + "A";
         }
-        else if (response == false) {
+        else  {
             choices = choices + "B";
         }
         setStory();
     }
     public void setStory() {
+        int chose = choices.length();
+        if ((chose >= 1) && (choices.substring(0, 1).equals("A"))) {
 
-        if( choices.substring(0,1) == "A" ) {
-            if ( choices.substring(1,2) == "A" ) {
-                if (choices.substring(2, 3) == "A") {
-                    if (choices.substring(3, 4) == "A") {
+            if (choices.substring(1, 2).equals("A")) {
+                if (choices.substring(2, 3).equals("A")) {
+                    if (choices.substring(3, 4).equals("A")) {
                         output.setText((String) wholeStory.get(15));
-                    } else if (choices.substring(3, 4) == "B") {
+                    } else if (choices.substring(3, 4).equals("B")) {
                         output.setText((String) wholeStory.get(16));
                     } else {
                         output.setText((String) wholeStory.get(7));
                     }
-                }
-                else if (choices.substring(2, 3) == "B") {
-                    if (choices.substring(3, 4) == "A") {
+                } else if (choices.substring(2, 3).equals("B")) {
+                    if (choices.substring(3, 4).equals("A")) {
                         output.setText((String) wholeStory.get(17));
-                    } else if (choices.substring(3, 4) == "B") {
+                    } else if (choices.substring(3, 4).equals("B")) {
                         output.setText((String) wholeStory.get(18));
                     } else {
                         output.setText((String) wholeStory.get(8));
                     }
-                }
-                else {
+                } else {
                     output.setText((String) wholeStory.get(3));
                 }
-            }
-            else if (choices.substring(1,2) == "B") {
-                if (choices.substring(2,3) == "A" ) {
-                    if (choices.substring(3,4) == "A") {
+            } else if (choices.substring(1, 2).equals("B")) {
+                if (choices.substring(2, 3).equals("A")) {
+                    if (choices.substring(3, 4).equals("A")) {
                         output.setText((String) wholeStory.get(19));
-                    }
-                    else  if(choices.substring(3,4) == "B") {
+                    } else if (choices.substring(3, 4).equals("B")) {
                         output.setText((String) wholeStory.get(20));
+                    } else {
+                        output.setText((String) wholeStory.get(9));
                     }
-                    else {
-                        output.setText( (String) wholeStory.get(9));
-                    }
-                }
-                else if (choices.substring(2,3) == "B") {
-                    if (choices.substring(3,4) == "A") {
+                } else if (choices.substring(2, 3).equals("B")) {
+                    if (choices.substring(3, 4).equals("A")) {
                         output.setText((String) wholeStory.get(21));
-                    }
-                    else  if(choices.substring(3,4) == "B") {
+                    } else if (choices.substring(3, 4).equals("B")) {
                         output.setText((String) wholeStory.get(22));
+                    } else {
+                        output.setText((String) wholeStory.get(10));
                     }
-                    else {
-                        output.setText( (String) wholeStory.get(10));
-                    }
-                }
-                else {
+                } else {
                     output.setText((String) wholeStory.get(4));
                 }
             }
+            else {
+                output.setText((String) wholeStory.get(1));
+            }
         }
         //Second Branch
-        else if(choices.substring(0,1) == "B") {
-            if ( choices.substring(1,2) == "A" ) {
-                if (choices.substring(2, 3) == "A") {
-                    if (choices.substring(3, 4) == "A") {
+        else if ((chose >= 1) && (choices.substring(0, 1).equals("B"))) {
+            if (choices.substring(1, 2).equals("A")) {
+                if (choices.substring(2, 3).equals("A")) {
+                    if (choices.substring(3, 4).equals("A")) {
                         output.setText((String) wholeStory.get(23));
-                    } else if (choices.substring(3, 4) == "B") {
+                    } else if (choices.substring(3, 4).equals("B")) {
                         output.setText((String) wholeStory.get(24));
                     } else {
                         output.setText((String) wholeStory.get(11));
                     }
-                }
-                else if (choices.substring(2, 3) == "B") {
-                    if (choices.substring(3, 4) == "A") {
+                } else if (choices.substring(2, 3).equals("B")) {
+                    if (choices.substring(3, 4).equals("A")) {
                         output.setText((String) wholeStory.get(25));
-                    } else if (choices.substring(3, 4) == "B") {
+                    } else if (choices.substring(3, 4).equals("B")) {
                         output.setText((String) wholeStory.get(26));
                     } else {
                         output.setText((String) wholeStory.get(12));
                     }
-                }
-                else {
+                } else {
                     output.setText((String) wholeStory.get(5));
                 }
-            }
-            else if (choices.substring(1,2) == "B") {
-                if (choices.substring(2,3) == "A" ) {
-                    if (choices.substring(3,4) == "A") {
+            } else if (choices.substring(1, 2).equals("B")) {
+                if (choices.substring(2, 3).equals("A")) {
+                    if (choices.substring(3, 4).equals("A")) {
                         output.setText((String) wholeStory.get(27));
-                    }
-                    else  if(choices.substring(3,4) == "B") {
+                    } else if (choices.substring(3, 4).equals("B")) {
                         output.setText((String) wholeStory.get(28));
+                    } else {
+                        output.setText((String) wholeStory.get(13));
                     }
-                    else {
-                        output.setText( (String) wholeStory.get(13));
-                    }
-                }
-                else if (choices.substring(2,3) == "B") {
-                    if (choices.substring(3,4) == "A") {
+                } else if (choices.substring(2, 3).equals("B")) {
+                    if (choices.substring(3, 4).equals("A")) {
                         output.setText((String) wholeStory.get(29));
-                    }
-                    else  if(choices.substring(3,4) == "B") {
+                    } else if (choices.substring(3, 4).equals("B")) {
                         output.setText((String) wholeStory.get(30));
+                    } else {
+                        output.setText((String) wholeStory.get(14));
                     }
-                    else {
-                        output.setText( (String) wholeStory.get(14));
-                    }
-                }
-                else {
+                } else {
                     output.setText((String) wholeStory.get(6));
                 }
             }
+            else {
+                output.setText((String) wholeStory.get(2));
+            }
         }
+
         else {
             output.setText((String) wholeStory.get(0));
         }
-        output.setText(choiceOutput);
+        //output.setText(choiceOutput);
     }
     public void setupStory() {
         wholeStory.add("1");
@@ -225,6 +222,8 @@ public class Play extends Activity {
         wholeStory.add("27");
         wholeStory.add("28");
         wholeStory.add("29");
+        wholeStory.add("30");
+        wholeStory.add("31");
 
     }
 }
