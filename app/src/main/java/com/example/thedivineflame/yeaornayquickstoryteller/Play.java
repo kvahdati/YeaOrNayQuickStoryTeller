@@ -52,7 +52,7 @@ public class Play extends Activity {
         quit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                output.setText(choices);
+                finish();
             }
         });
     }
@@ -94,19 +94,19 @@ public class Play extends Activity {
         int chose = choices.length();
         if ((chose >= 1) && (choices.substring(0, 1).equals("A"))) {
 
-            if (choices.substring(1, 2).equals("A")) {
-                if (choices.substring(2, 3).equals("A")) {
-                    if (choices.substring(3, 4).equals("A")) {
+            if ((chose >=2) && (choices.substring(1, 2).equals("A"))) {
+                if ((chose >=3) && (choices.substring(2, 3).equals("A"))) {
+                    if ((chose >=4) && (choices.substring(3, 4).equals("A"))) {
                         output.setText((String) wholeStory.get(15));
-                    } else if (choices.substring(3, 4).equals("B")) {
+                    } else if ((chose >=4) && (choices.substring(3, 4).equals("B"))) {
                         output.setText((String) wholeStory.get(16));
                     } else {
                         output.setText((String) wholeStory.get(7));
                     }
-                } else if (choices.substring(2, 3).equals("B")) {
-                    if (choices.substring(3, 4).equals("A")) {
+                } else if ((chose >=3) && (choices.substring(2, 3).equals("B"))) {
+                    if ((chose >=4) && (choices.substring(3, 4).equals("A"))) {
                         output.setText((String) wholeStory.get(17));
-                    } else if (choices.substring(3, 4).equals("B")) {
+                    } else if ((chose >=4) && (choices.substring(3, 4).equals("B"))) {
                         output.setText((String) wholeStory.get(18));
                     } else {
                         output.setText((String) wholeStory.get(8));
@@ -114,19 +114,19 @@ public class Play extends Activity {
                 } else {
                     output.setText((String) wholeStory.get(3));
                 }
-            } else if (choices.substring(1, 2).equals("B")) {
-                if (choices.substring(2, 3).equals("A")) {
-                    if (choices.substring(3, 4).equals("A")) {
+            } else if ((chose >=2) &&(choices.substring(1, 2).equals("B"))) {
+                if ((chose >=3) && (choices.substring(2, 3).equals("A"))) {
+                    if ((chose >=4) && (choices.substring(3, 4).equals("A"))) {
                         output.setText((String) wholeStory.get(19));
-                    } else if (choices.substring(3, 4).equals("B")) {
+                    } else if ((chose >=4) && (choices.substring(3, 4).equals("B"))) {
                         output.setText((String) wholeStory.get(20));
                     } else {
                         output.setText((String) wholeStory.get(9));
                     }
-                } else if (choices.substring(2, 3).equals("B")) {
-                    if (choices.substring(3, 4).equals("A")) {
+                } else if ((chose >=3) && (choices.substring(2, 3).equals("B"))) {
+                    if ((chose >=4) && (choices.substring(3, 4).equals("A"))) {
                         output.setText((String) wholeStory.get(21));
-                    } else if (choices.substring(3, 4).equals("B")) {
+                    } else if ((chose >=4) && (choices.substring(3, 4).equals("B"))) {
                         output.setText((String) wholeStory.get(22));
                     } else {
                         output.setText((String) wholeStory.get(10));
@@ -141,19 +141,19 @@ public class Play extends Activity {
         }
         //Second Branch
         else if ((chose >= 1) && (choices.substring(0, 1).equals("B"))) {
-            if (choices.substring(1, 2).equals("A")) {
-                if (choices.substring(2, 3).equals("A")) {
-                    if (choices.substring(3, 4).equals("A")) {
+            if ((chose >=2) && (choices.substring(1, 2).equals("A"))) {
+                if ((chose >=3) && (choices.substring(2, 3).equals("A"))) {
+                    if ((chose >=4) && (choices.substring(3, 4).equals("A"))) {
                         output.setText((String) wholeStory.get(23));
-                    } else if (choices.substring(3, 4).equals("B")) {
+                    } else if ((chose >=4) && (choices.substring(3, 4).equals("B"))) {
                         output.setText((String) wholeStory.get(24));
                     } else {
                         output.setText((String) wholeStory.get(11));
                     }
-                } else if (choices.substring(2, 3).equals("B")) {
-                    if (choices.substring(3, 4).equals("A")) {
+                } else if ((chose >=3) && (choices.substring(2, 3).equals("B"))) {
+                    if ((chose >=4) && (choices.substring(3, 4).equals("A"))) {
                         output.setText((String) wholeStory.get(25));
-                    } else if (choices.substring(3, 4).equals("B")) {
+                    } else if ((chose >=4) &&(choices.substring(3, 4).equals("B"))) {
                         output.setText((String) wholeStory.get(26));
                     } else {
                         output.setText((String) wholeStory.get(12));
@@ -161,19 +161,19 @@ public class Play extends Activity {
                 } else {
                     output.setText((String) wholeStory.get(5));
                 }
-            } else if (choices.substring(1, 2).equals("B")) {
-                if (choices.substring(2, 3).equals("A")) {
-                    if (choices.substring(3, 4).equals("A")) {
+            } else if ((chose >=2) && (choices.substring(1, 2).equals("B"))) {
+                if ((chose >=3) && (choices.substring(2, 3).equals("A"))) {
+                    if ((chose >=4) && (choices.substring(3, 4).equals("A"))) {
                         output.setText((String) wholeStory.get(27));
-                    } else if (choices.substring(3, 4).equals("B")) {
+                    } else if ((chose >=4) && (choices.substring(3, 4).equals("B"))) {
                         output.setText((String) wholeStory.get(28));
                     } else {
                         output.setText((String) wholeStory.get(13));
                     }
-                } else if (choices.substring(2, 3).equals("B")) {
-                    if (choices.substring(3, 4).equals("A")) {
+                } else if ((chose >=3) && (choices.substring(2, 3).equals("B"))) {
+                    if ((chose >=4) && (choices.substring(3, 4).equals("A"))) {
                         output.setText((String) wholeStory.get(29));
-                    } else if (choices.substring(3, 4).equals("B")) {
+                    } else if ((chose >=4) && (choices.substring(3, 4).equals("B"))) {
                         output.setText((String) wholeStory.get(30));
                     } else {
                         output.setText((String) wholeStory.get(14));
